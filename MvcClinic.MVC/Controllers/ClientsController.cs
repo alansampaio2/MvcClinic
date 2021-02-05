@@ -18,29 +18,29 @@ namespace MvcClinic.MVC.Controllers
         }
 
         // GET: Clients
-        public async Task<IActionResult> Index(string clientBorn, string searchString)
+        public async Task<IActionResult> Index(string searchDateBirth, string searchString)
         {
-            IQueryable<string> bornQuery = from p in _context.Clients
-                                           orderby p.Born
-                                           select p.Born;
+            IQueryable<string> birthQuery = from p in _context.Clients
+                                           orderby p.DateBirth
+                                           select p.DateBirth;
 
-            var pacientes = from p in _context.Clients
+            var clients = from p in _context.Clients
                             select p;
 
             if (!string.IsNullOrEmpty(searchString))
             {
-                pacientes = pacientes.Where(p => p.Name.Contains(searchString));
+                clients = clients.Where(p => p.Name.Contains(searchString));
             }
 
-            if (!string.IsNullOrEmpty(clientBorn))
+            if (!string.IsNullOrEmpty(searchDateBirth))
             {
-                pacientes = pacientes.Where(p => p.Born.Contains(clientBorn));
+                clients = clients.Where(p => p.DateBirth.Contains(searchDateBirth));
             }
 
-            var VM = new ClientBornViewModel
+            var VM = new ClientBirthDateViewModel
             {
-                Borns = new SelectList(await bornQuery.Distinct().ToListAsync()),
-                Clients = await pacientes.ToListAsync()
+                DateBirth = new SelectList(await birthQuery.Distinct().ToListAsync()),
+                Clients = await clients.ToListAsync()
             };
 
             return View(VM);
@@ -75,7 +75,7 @@ namespace MvcClinic.MVC.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,CPF,CellPhone,Born,Address,Email,RegDate,MaritalStatus")] Client client)
+        public async Task<IActionResult> Create(Client client)
         {
             if (ModelState.IsValid)
             {
@@ -107,7 +107,7 @@ namespace MvcClinic.MVC.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,CPF,CellPhone,Born,Address,Email,RegDate,MaritalStatus")] Client client)
+        public async Task<IActionResult> Edit(int id, Client client)
         {
             if (id != client.Id)
             {

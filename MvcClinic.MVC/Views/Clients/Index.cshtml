@@ -1,4 +1,4 @@
-﻿@model MvcClinic.MVC.Models.ClientBornViewModel
+﻿@model MvcClinic.MVC.Models.ClientBirthDateViewModel
 
 @{
     ViewData["Title"] = "Index";
@@ -12,7 +12,7 @@
 
 <form asp-controller="Clients" asp-action="Index" method="get">
     <p>
-        <select asp-for="ClienteBorn" asp-items="Model.Borns">
+        <select asp-for="SearchDateBirth" asp-items="Model.DateBirth">
             <option value="">-Selecione-</option>
         </select>
         Nome: <input type="text" asp-for="SearchString" />
@@ -33,7 +33,7 @@
                 @Html.DisplayNameFor(model => model.Clients[0].CellPhone)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Clients[0].Born)
+                @Html.DisplayNameFor(model => model.Clients[0].DateBirth)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Clients[0].Address)
@@ -61,16 +61,13 @@
                     @Html.DisplayFor(modelItem => item.CellPhone)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Born)
+                    @Html.DisplayFor(modelItem => item.DateBirth)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Address)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.RegDate)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.MaritalStatus)

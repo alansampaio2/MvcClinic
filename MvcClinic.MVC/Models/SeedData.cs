@@ -22,7 +22,7 @@ namespace MvcClinic.MVC.Models
                     {
                         Name = "Wagner Albuquerque",
                         CPF = "8987889657",
-                        Born = "10/06/2000",
+                        DateBirth = "10/06/2000",
                         CellPhone = "79 98869-8989",
                         Email = "wagner@gmail.com",
                         Address = "Rua Maria da Penha",
@@ -33,7 +33,7 @@ namespace MvcClinic.MVC.Models
                     {
                         Name = "Mauro Galvão",
                         CPF = "98523569887",
-                        Born = "25/06/1996",
+                        DateBirth = "25/06/1996",
                         CellPhone = "79 98869-8989",
                         Email = "maurogalvao@gmail.com",
                         Address = "Rua Chica Chaves, 78",
@@ -44,7 +44,7 @@ namespace MvcClinic.MVC.Models
                     {
                         Name = "Alziva Evas",
                         CPF = "8987889657",
-                        Born = "30/06/2000",
+                        DateBirth = "30/06/2000",
                         CellPhone = "79 98869-8989",
                         Email = "alzira@gmail.com",
                         Address = "Rua bromélias, 1256",
@@ -55,7 +55,7 @@ namespace MvcClinic.MVC.Models
                     {
                         Name = "Marcones Terevel",
                         CPF = "897523577",
-                        Born = "30/04/1978",
+                        DateBirth = "30/04/1978",
                         CellPhone = "79 9566-8989",
                         Email = "marcones@gmail.com",
                         Address = "Rua Felícia SAntos, 1256",

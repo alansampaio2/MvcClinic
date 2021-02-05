@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace MvcClinic.MVC.Models
 {
-    public class ClientBornViewModel
+    public class ClientBirthDateViewModel
     {
         public List<Client> Clients { get; set; }
-        public SelectList Borns { get; set; }
-        public string ClienteBorn { get; set; }
+        public SelectList DateBirth { get; set; }
+        public string SearchDateBirth { get; set; }
         public string SearchString { get; set; }
     }
 }

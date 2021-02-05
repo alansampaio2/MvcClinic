@@ -16,7 +16,7 @@ namespace MvcClinic.MVC.Models
         [Display(Name = "Número do Celular")]
         public string CellPhone { get; set; }
         [Display(Name = "Data de Nascimento")]
-        public string Born { get; set; }
+        public string DateBirth { get; set; }
         [Display(Name = "Endereço")]
         [StringLength(150, ErrorMessage = "Máximo de 150 caracteres")]
         public string Address { get; set; }
